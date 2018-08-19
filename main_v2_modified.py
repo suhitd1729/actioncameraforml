@@ -12,6 +12,8 @@ import torchvision.datasets as dset
 import torchvision.transforms as transforms
 import torchvision.utils as vutils
 from torch.autograd import Variable
+from PIL import ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 #references:
 # https://github.com/pytorch/examples/tree/master/dcgan
@@ -38,17 +40,17 @@ saverate = 50          #save image once per saverate
 
 ##the below location is on the lambda1 server
 
-saveloc = "/home/suhitdat/pgfakes/"
+saveloc = "/data/shared/suhit/beverages_gan/"
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--dataset', required=True, help='cifar10 | lsun | imagenet | folder | lfw | fake')
+parser.add_argument('--dataset', required=True, help='cifar10 | lsun | imagenet | folder | lfw | beverages')
 parser.add_argument('--dataroot', required=True, help='path to dataset')
 ## workers modified from 2 to 3 
 parser.add_argument('--workers', type=int, help='number of data loading workers', default=3) 
 
 # modified batchsize from 64 to 1 
-parser.add_argument('--batchSize', type=int, default=1, help='input batch size')
+parser.add_argument('--batchSize', type=int, default=64, help='input batch size')
 parser.add_argument('--imageSize', type=int, default=64, help='the height / width of the input image to network')
 parser.add_argument('--nz', type=int, default=100, help='size of the latent z vector')
 
@@ -85,7 +87,7 @@ cudnn.benchmark = True
 if torch.cuda.is_available() and not opt.cuda:
     print("WARNING: You have a CUDA device, so you should probably run with --cuda")
 
-if opt.dataset in ['imagenet', 'folder', 'lfw', 'pgimages','resdogsimages']:
+if opt.dataset in ['imagenet', 'folder', 'lfw', 'beverages']:
     # folder dataset
     dataset = dset.ImageFolder(root=opt.dataroot,
                                transform=transforms.Compose([
