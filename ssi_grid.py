@@ -11,8 +11,11 @@ from os.path import isfile, join
 import math
 import random
 import pprint
-#from skimage.measure import structural_similarity as ssim
-from skimage.measure import compare_ssim
+import skimage
+from skimage.measure import structural_similarity as ssim
+#from skimage.measure import compare_ssim as ssim
+import warnings
+warnings.filterwarnings("ignore")
 
 targetGraphNameWithExt = '/data/shared/suhit/playground_ssi_grid_plot.png'
 imagetitle = "SSI for Playground data" 
@@ -54,7 +57,7 @@ def standardizeImageList(imgList):
 def findssi (imageA , imageB):
     im_np1 = np.asarray(imageA.convert('L'))
     im_np2 = np.asarray(imageB.convert('L'))
-    s = compare_ssim(im_np1,im_np2)
+    s = ssim(im_np1,im_np2)
     return s        
 
 def createDictOfSSIValues(imgList):
@@ -92,6 +95,7 @@ for ip in l1:
 accList = []
 d = {}
 for opimage in l2:
+    print(opimage)
     oppath = os.path.join(opfolder,opimage)
     out_img = Image.open(oppath)
     size = out_img.size[0]
