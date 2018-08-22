@@ -97,6 +97,7 @@ for ip in l1:
 accList = []
 d = {}
 for opimage in l2:
+    print(opimage)
     oppath = os.path.join(opfolder,opimage)
     out_img = Image.open(oppath)
     size = out_img.size[0]
