@@ -8,21 +8,22 @@ In order to compare the input and the output images , the following techniques h
 **1)  Kernel Maximum Mean Discrepancy (KMMD)**<br>
 **2) Structural Similarity Index**<br> 
 **3) 1 Nearest Neighbour**<br>
-
+<br>
 *Reference :* https://arxiv.org/pdf/1802.03446.pdf
-<br> 
-Following steps are undertaken to run the experiments 
+<br><br>
+### Following steps are undertaken to run the experiments:
 <br>
 **Conversion of video to a sequence of png images**
 <br>
 avconv -i /data/shared/videos/demo.mp4 -r framerate -f image2 /home/suhitdat/input_images/%04d.png
-
+<br>
 **Feeding the input images to a GAN** <br>
 This will spit the output in a directory specified inside the python code.
-<br> 
-python3 main_v2_modified.py --dataroot "directory containing input images folder"  --dataset "input images folder name" --niter "num of epochs to train for" --cuda
-<br>
-eg: python3 main_v2_modified.py --dataroot /data/shared/images/grocerystore/ --dataset beverages --cuda --niter 25
+
+python3 **main_v2_modified.py** --*dataroot* "directory containing input images folder"  --*dataset* "input images folder name" --*niter* "num of epochs to train for" --*cuda*
+<br><br>
+eg: <br>
+python3 main_v2_modified.py --dataroot /data/shared/images/grocerystore/ --dataset beverages --cuda --niter 25
 
 **Renaming the image outputs as per timestamp** <br>
 This renames the file names from --epoch-- format to plain "image%%" where %% represents the numeric value. Output image folder is specified inside the python code.
