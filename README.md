@@ -1,4 +1,4 @@
-# Smart Image Sampling 
+# Action cameras - Evaluating image quality and suitability for Machine Learning 
 
 This project includes developing smart sampling techniques to sample key images (frames) from long video sequences. The objective was to ensure that the images so obtained have minimum redundancy among them and that the auxiliary information about the video capture event, such as location, time, annotations by the video recorder, camera focus, etc., is integrated with the image content.
 
