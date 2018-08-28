@@ -35,8 +35,8 @@ python3 rename.py
 **4) Computing Sharpness of Output images by GAN** <br>
 
 This will compute the sharpness of the output images. 
-Output image folder is specified inside the python code.
-Note: Each output image comprises 8*8 images. Batchsize of 64 images specified while running the GAN. <br>  
+Output image folder is specified inside the python code. <br>
+Note: Each output image comprises 8x8 images. Batchsize of 64 images has been specified while running the GAN. <br>  
 
 grid_sharpness_measure.py
  
