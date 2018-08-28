@@ -4,54 +4,54 @@ This project includes developing smart sampling techniques to sample key images 
 
 The processed images are then fed into a *Generative Adversarial Network (GAN) model* to generate synthetic images that are similar to the input images.
 
-In order to compare the input and the output images , the following techniques have been used: 
-**1)  Kernel Maximum Mean Discrepancy (KMMD)**
-**2) Structural Similarity Index** 
-**3) 1 Nearest Neighbour**
+In order to compare the input and the output images , the following techniques have been used: <br>
+**1)  Kernel Maximum Mean Discrepancy (KMMD)**<br>
+**2) Structural Similarity Index**<br> 
+**3) 1 Nearest Neighbour**<br>
 
 *Reference :* https://arxiv.org/pdf/1802.03446.pdf
- 
-Following steps are undertaken to run the experiments : 
-
-**A) Conversion of video to a sequence of png images  **
-
+<br> 
+Following steps are undertaken to run the experiments 
+<br>
+**Conversion of video to a sequence of png images**
+<br>
 avconv -i /data/shared/videos/demo.mp4 -r framerate -f image2 /home/suhitdat/input_images/%04d.png
 
-**B) Feeding the input images to a GAN**
+**Feeding the input images to a GAN** <br>
 This will spit the output in a directory specified inside the python code.
- 
+<br> 
 python3 main_v2_modified.py --dataroot "directory containing input images folder"  --dataset "input images folder name" --niter "num of epochs to train for" --cuda
+<br>
+eg: python3 main_v2_modified.py --dataroot /data/shared/images/grocerystore/ --dataset beverages --cuda --niter 25
 
-eg:  main_v2_modified.py --dataroot /data/shared/images/grocerystore/ --dataset beverages --cuda --niter 25
-
-**C) Renaming the image outputs as per timestamp**
+**Renaming the image outputs as per timestamp** <br>
 This renames the file names from --epoch-- format to plain "image%%" where %% represents the numeric value. Output image folder is specified inside the python code.
-
+<br>
 python3 rename.py 
 
-**D) Computing Sharpness of Output images by GAN**
+**Computing Sharpness of Output images by GAN** <br>
 This will compute the sharpness of the output images. 
 Output image folder is specified inside the python code.
 Note: Each output image comprises 8*8 images. Batchsize of 64 images specified while running the GAN.
-  
+<br>  
 grid_sharpness_measure.py
  
-**E) Running the Techniques/Modules explained above**
+**Running the Techniques/Modules explained above** <br>
 
 All the python codes have an option to specify the input images and the output images folder. 
 eg: 
-ipfolder = "/data/shared/images/grocerystore/beverages"
-opfolder = "/data/shared/suhit/beverages_gan"
+**ipfolder** = "/data/shared/images/grocerystore/beverages"
+**opfolder** = "/data/shared/suhit/beverages_gan"
 
 The name/location of the output plot can be specified inside the python code. 
 
-To run a structural similarity index comparison between input and output images: 
-python3 ssi_grid.py
+To run a **structural similarity index** comparison between input and output images: 
+**python3 ssi_grid.py**
 
-To run a Kernel Maximum Mean Discrepancy comparison between input and output images: 
-python3 kmmd_grid.py
+To run a **Kernel Maximum Mean Discrepancy** comparison between input and output images: 
+**python3 kmmd_grid.py**
 
-To run a 1 Nearest Neighbor comparison between input and output images: 
-python3 1nn_grid.py
+To run a **1 Nearest Neighbor** comparison between input and output images: 
+**python3 1nn_grid.py**
 
-For a sample of the outputs obtained by method "X", check the plots_X folder  
+For a sample of the outputs obtained by method **"X"**, check the **plots_X** folder  
