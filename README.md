@@ -22,20 +22,22 @@ avconv -i /data/shared/videos/demo.mp4 -r framerate -f image2 /home/suhitdat/inp
 This will spit the output in a directory specified inside the python code.
 
 python3 **main_v2_modified.py** --*dataroot* "directory containing input images folder"  --*dataset* "input images folder name" --*niter* "num of epochs to train for" --*cuda*
-<br><br>
+<br>
 eg: <br>
 python3 main_v2_modified.py --dataroot /data/shared/images/grocerystore/ --dataset beverages --cuda --niter 25
 
 **3) Renaming the image outputs as per timestamp** <br>
-This renames the file names from --epoch-- format to plain "image%%" where %% represents the numeric value. Output image folder is specified inside the python code.
-<br>
+
+This renames the file names from --epoch-- format to plain "image%%" where %% represents the numeric value. Output image folder is specified inside the python code. <br>
+
 python3 rename.py 
 
 **4) Computing Sharpness of Output images by GAN** <br>
+
 This will compute the sharpness of the output images. 
 Output image folder is specified inside the python code.
-Note: Each output image comprises 8*8 images. Batchsize of 64 images specified while running the GAN.
-<br>  
+Note: Each output image comprises 8*8 images. Batchsize of 64 images specified while running the GAN. <br>  
+
 grid_sharpness_measure.py
  
 **5) Running the Techniques/Modules explained above** <br>
