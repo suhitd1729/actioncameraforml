@@ -1,5 +1,7 @@
-#Smart Image Sampling 
+##Smart Image Sampling 
+
 This project includes developing smart sampling techniques to sample key images (frames) from long video sequences. The objective was to ensure that the images so obtained have minimum redundancy among them and that the auxiliary information about the video capture event, such as location, time, annotations by the video recorder, camera focus, etc., is integrated with the image content.
+
 The processed images are then fed into a Generative Adversarial Network (GAN) model to generate synthetic images that are similar to the input images.
 
 In order to compare the input and the output images , the following techniques have been used: 
@@ -10,6 +12,7 @@ In order to compare the input and the output images , the following techniques h
 Reference : https://arxiv.org/pdf/1802.03446.pdf
  
 Following steps are undertaken to run the experiments : 
+
 A) Conversion of video to a sequence of png images  
 
 avconv -i /data/shared/videos/demo.mp4 -r framerate -f image2 /home/suhitdat/input_images/%04d.png
