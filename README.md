@@ -23,7 +23,7 @@ We evaluate the results by comparing the original images from video to the outpu
 
 <br>
 *Reference :* https://arxiv.org/pdf/1802.03446.pdf
-<br><br>
+<br>
 
 ### Usage 
 
@@ -82,7 +82,7 @@ For a sample of the outputs obtained by method **"X"**, check the **plots_X** fo
 
 
 Contributors:
-1) Prof. Varun Chandola 
-2) Prof. Marc Böhlen 
-3) Suhit Datta
+> Prof. Varun Chandola 
+> Prof. Marc Böhlen 
+> Suhit Datta
 
