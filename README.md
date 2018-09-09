@@ -3,26 +3,27 @@
 # Action cameras - Evaluating image quality and suitability for Machine Learning 
 
 This project aims to evaluate the suitability of images sourced from video (of action cameras) for machine learning applications. The project has three parts:
-
-**1) Extracting images from video
+<br>
+**1) Extracting images from video**
 
 We extract individual images at frame rate from the video. Then we select the keyframes from this sequence.
 
-**2) Applying these images to one particular machine learning task: image generation via a Generative Adversarial Network (GAN)
+**2) Applying these images to one particular machine learning task: image generation via a Generative Adversarial Network (GAN)**<br>
 
 We train a GAN to reproduce the images from the original video. Our GAN is DCGAN implemented in pytorch, based on the example provided here: https://github.com/soumith/dcgan.torch. See code below for details.
 
 https://github.com/suhitd1729/Action-cameras-evaluating-image-quality-and-suitability-for-machine-learning/blob/master/main_v2_modified.py
 
-**3) Evaluating performance of the output based on established metrics (Reference : https://arxiv.org/pdf/1802.03446.pdf)
+**3) Evaluating performance of the output based on established metrics** (Reference : https://arxiv.org/pdf/1802.03446.pdf)<br>
 
-We evaluate the results by comparing the original images from video to the output images of the GAN by the following metrics:
+We evaluate the results by comparing the original images from video to the output images of the GAN by the following metrics:<br>
+**a)  Kernel Maximum Mean Discrepancy (KMMD)**<br>
+**b) Structural Similarity Index**<br> 
+**c) 1 Nearest Neighbour**<br>
 
-a) Structural Similarity Index
-
-b) Kernel Maximum Mean Discrepancy
-
-c) 1 Nearest Neighbor
+<br>
+*Reference :* https://arxiv.org/pdf/1802.03446.pdf
+<br><br>
 
 ### Usage 
 
@@ -30,13 +31,6 @@ This project includes developing smart sampling techniques to sample key images 
 
 The processed images are then fed into a *Generative Adversarial Network (GAN) model* to generate synthetic images that are similar to the input images.
 
-In order to compare the input and the output images , the following techniques have been used: <br>
-**1)  Kernel Maximum Mean Discrepancy (KMMD)**<br>
-**2) Structural Similarity Index**<br> 
-**3) 1 Nearest Neighbour**<br>
-<br>
-*Reference :* https://arxiv.org/pdf/1802.03446.pdf
-<br><br>
 ### Following steps are undertaken to run the experiments:
 
 **1) Conversion of video to a sequence of png images** <br>
