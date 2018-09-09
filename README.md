@@ -82,7 +82,7 @@ For a sample of the outputs obtained by method **"X"**, check the **plots_X** fo
 
 
 Contributors:
-> Prof. Varun Chandola 
-> Prof. Marc Böhlen 
+> Prof. Varun Chandola ,
+> Prof. Marc Böhlen ,
 > Suhit Datta
 
