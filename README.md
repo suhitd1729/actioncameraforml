@@ -80,7 +80,9 @@ To run a **1 Nearest Neighbor** comparison between input and output images:
 
 For a sample of the outputs obtained by method **"X"**, check the **plots_X** folder  
 
+
 Contributors:
-1) Marc Böhlen
-2) Suhit Datta
-3) Varun Chandola 
+1) Prof. Varun Chandola 
+2) Prof. Marc Böhlen 
+3) Suhit Datta
+
