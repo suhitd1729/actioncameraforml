@@ -79,3 +79,8 @@ To run a **1 Nearest Neighbor** comparison between input and output images:
 **python3 1nn_grid.py**
 
 For a sample of the outputs obtained by method **"X"**, check the **plots_X** folder  
+
+Contributors:
+1) Marc Böhlen
+2) Suhit Datta
+3) Varun Chandola 
