@@ -1,4 +1,30 @@
+
+
 # Action cameras - Evaluating image quality and suitability for Machine Learning 
+
+This project aims to evaluate the suitability of images sourced from video (of action cameras) for machine learning applications. The project has three parts:
+
+**1) Extracting images from video
+
+We extract individual images at frame rate from the video. Then we select the keyframes from this sequence.
+
+**2) Applying these images to one particular machine learning task: image generation via a Generative Adversarial Network (GAN)
+
+We train a GAN to reproduce the images from the original video. Our GAN is DCGAN implemented in pytorch, based on the example provided here: https://github.com/soumith/dcgan.torch. See code below for details.
+
+https://github.com/suhitd1729/Action-cameras-evaluating-image-quality-and-suitability-for-machine-learning/blob/master/main_v2_modified.py
+
+**3) Evaluating performance of the output based on established metrics (Reference : https://arxiv.org/pdf/1802.03446.pdf)
+
+We evaluate the results by comparing the original images from video to the output images of the GAN by the following metrics:
+
+a) Structural Similarity Index
+
+b) Kernel Maximum Mean Discrepancy
+
+c) 1 Nearest Neighbor
+
+### Usage 
 
 This project includes developing smart sampling techniques to sample key images (frames) from long video sequences. The objective was to ensure that the images so obtained have minimum redundancy among them and that the auxiliary information about the video capture event, such as location, time, annotations by the video recorder, camera focus, etc., is integrated with the image content.
 
