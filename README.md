@@ -3,7 +3,7 @@
 # Action cameras - Evaluating image quality and suitability for Machine Learning 
 
 This project aims to evaluate the suitability of images sourced from video (of action cameras) for machine learning applications. The project has three parts:
-<br>
+<br><br>
 **1) Extracting images from video**
 
 We extract individual images at frame rate from the video. Then we select the keyframes from this sequence.
