@@ -30,7 +30,7 @@ saverate = 50          #save image once per saverate
 ## modified the code for lambda1  
 #saverate = 25
 
-#saveloc = "/home/suhit/proj/fake/milufakes_50e_mainv2_images1+6+7/"
+saveloc = "/home/suhit/proj/fake/milufakes_50e_mainv2_images1+6+7/"
 #saveloc = "/home/suhit/proj/fakes/"
 
 
